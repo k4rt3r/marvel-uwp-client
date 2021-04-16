@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="marvelReset.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:marvelReset"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{StaticResource FondoBeige}">
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="500"
+                    Height="200">
+            <TextBox Style="{StaticResource TxtIniciales}"
+                     x:Name="txtUsuario"
+                     Text="{Binding UserName, Mode=TwoWay}"
+                     PlaceholderText="Usuario"/>
+
+            <PasswordBox x:Name="passBox"
+                         Style="{StaticResource passInicial}"
+                         Password="{Binding Password, Mode=TwoWay}"
+                         PlaceholderText="Contraseña"/>
+
+            <Button Style="{StaticResource BotonesIniciales}"
+                x:Name="BotonInicio" 
+                Content="ENTRAR" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                 Command="{Binding LoginCommand, Mode=TwoWay}"/>
+
+            <TextBlock x:Name="ErrorUsuario"
+                       Style="{StaticResource mensajeError}"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

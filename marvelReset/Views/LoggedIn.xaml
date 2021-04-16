@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="marvelReset.Views.LoggedIn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:marvelReset.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+     Background="{StaticResource FondoBeige}">
+    <Grid>
+        <TextBlock x:Name="tituloText"
+                   Text="LOGGED IN"
+                   Style="{StaticResource txtBienvenida}"/>
+        <NavigationView  x:Name="navView"
+                         OpenPaneLength="240"
+                         Foreground="{StaticResource BlancoForeground}">
+            <!--SelectedItem="{Binding NavViewItem}"
+                         SelectionChanged="{Binding FrameNavegacion}"-->
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Name="character" 
+                                    Icon="People" 
+                                    Content="Character"
+                                    Tag="Characters"
+                                    />
+                <NavigationViewItem x:Name="comic"
+                                    Content="Comic" 
+                                    Tag="Comics">
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon UriSource="Assets/book.png"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem x:Name="creator" 
+                                    Content="Creator"
+                                    Tag="Creator">
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon UriSource="Assets/pencil.png"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+        </NavigationView>
+    </Grid>
+</Page>
