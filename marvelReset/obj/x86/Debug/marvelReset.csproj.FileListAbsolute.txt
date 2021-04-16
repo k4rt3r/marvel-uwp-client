@@ -57,3 +57,4 @@ C:\Users\Joan\source\repos\marvelReset\marvelReset\obj\x86\Debug\Views\charGrid.
 C:\Users\Joan\source\repos\marvelReset\marvelReset\obj\x86\Debug\Views\charGrid.g.cs
 C:\Users\Joan\source\repos\marvelReset\marvelReset\obj\x86\Debug\Views\charGrid.xaml
 C:\Users\Joan\source\repos\marvelReset\marvelReset\obj\x86\Debug\Views\charGrid.xbf
+C:\Users\Joan\source\repos\marvelReset\marvelReset\obj\x86\Debug\marvelReset.csprojAssemblyReference.cache

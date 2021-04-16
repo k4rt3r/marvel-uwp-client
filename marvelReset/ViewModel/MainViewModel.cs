@@ -37,6 +37,9 @@ namespace marvelReset.ViewModel
             }
         }
 
+
+
+
         //private ICommand _showOptionCommand;
 
         //public ICommand ShowOptionCommand
@@ -48,6 +51,9 @@ namespace marvelReset.ViewModel
         //    }
 
         //}
+
+
+
 
         //private void LoadPage(MenuItemModel item)
         //{
@@ -61,6 +67,9 @@ namespace marvelReset.ViewModel
         //    }
         //}
 
+
+
+
         //private void LoadData()
         //{
         //    MenuList = new ObservableCollection<MenuItemModel>(new List<MenuItemModel>()
@@ -73,5 +82,8 @@ namespace marvelReset.ViewModel
         //        }
         //    });
         //}
+
+
+
     }
 }

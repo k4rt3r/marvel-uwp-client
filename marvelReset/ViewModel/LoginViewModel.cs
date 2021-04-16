@@ -51,7 +51,6 @@ namespace marvelReset.ViewModel
             }
         }
 
-
         public string UserName
         {
             get { return _userName; }
@@ -66,7 +65,6 @@ namespace marvelReset.ViewModel
         {
             if (UserName == USUARIO && Password == CONTRASENYA)
             {
-                //ListViewModel lstModel = new ListViewModel(_navigate);hace lo mismo que con MainViewModel
                 MainViewModel mainVModel = new MainViewModel(_navigate);
             }
         }
