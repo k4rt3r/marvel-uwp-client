@@ -1,0 +1,80 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:marvelReset.Resources">
+    <!-- ESTILOS DE MAIN PAGE -->
+    <Style TargetType="Button" x:Key="BotonesIniciales">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Background" Value="{StaticResource PasionaOrange}"/>
+        <Setter Property="Foreground" Value="{StaticResource PitchBlack}"/>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="TxtIniciales">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="PasswordBox" x:Key="passInicial">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="mensajeError">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Foreground" Value="{StaticResource RojoError}"/>
+    </Style>
+
+    <!-- ESTILOS DE LOGGED IN -->
+    <Style TargetType="Button" x:Key="buttonSide">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PasionaOrange}"/>
+        <Setter Property="Background" Value="{StaticResource FondoBeige}"/>
+        <Setter Property="Foreground" Value="{StaticResource PitchBlack}"/>
+        <Setter Property="HorizontalAlignment" Value="left"/>
+    </Style>
+
+    <Style TargetType="Rectangle" x:Key="SideBarInicial">
+        <Setter Property="Height" Value="1000"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="HorizontalAlignment" Value="left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Fill" Value="{StaticResource FondoRectangulo}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="txtBienvenida">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="TextDecorations" Value="Underline"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Foreground" Value="{StaticResource PasionaOrange}"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Padding" Value="10"/>
+    </Style>
+
+    <!-- 
+    <DataTemplate x:Key="plantillaMenu" x:DataType="local:MenuItem">
+        <StackPanel Orientation="Horizontal" 
+                    Height="44" 
+                    Padding="12">
+            <SymbolIcon Grid.Column="0" Symbol="{x:Bind Icon, Mode=OneWay}" Foreground="White" />
+            <TextBlock 
+                       Text="{x:Bind Name, Mode=OneWay}" 
+                       FontSize="16" 
+                       VerticalAlignment="Center" 
+                       Foreground="White" />
+        </StackPanel>
+    </DataTemplate>
+    -->
+
+</ResourceDictionary>
+

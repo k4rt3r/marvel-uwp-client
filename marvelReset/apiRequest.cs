@@ -1,4 +1,5 @@
 ﻿using marvelReset.Dtos;
+using marvelReset.Model;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -11,10 +12,11 @@ namespace marvelReset
 {
     class apiRequest
     {
-        
-        public static List<Character> GetCharacters(int offset)//COMO APLICAR EL OFFSET
+
+        //CHARACTER TYPE METHODS
+        public static List<Character> GetCharacters(int offset)
         {
-            string url = "https://localhost:44385/api/characters/0"; //NO FUNCIONA
+            string url = "https://localhost:44385/api/characters/offset="+offset; //NO FUNCIONA
 
             var client = new RestClient(url);
             client.Timeout = -1;
@@ -25,8 +27,6 @@ namespace marvelReset
             List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(response.Content);
             return characters;
         }
-
-        //COMO APLICAR EL OFFSET + LIMIT
 
         public static List<Character> GetCharacters(int limit = 100, int offset = 0)
         {
@@ -41,10 +41,10 @@ namespace marvelReset
             List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(response.Content);
             return characters;
         }
-
-        public static List<Character> SearchCharactersWith(string name, int limit=100, int offset = 0)//COMO APLICAR EL NOMBRE + OFFSET + LIMIT  
+        
+        public static List<Character> SearchCharactersWith(string name)
         {
-            string url = $"https://localhost:44385/api/characters?nameStartsWith={name}&limit={limit}&offset={offset}";
+            string url = $"https://localhost:44385/api/characters/nameStartsWith={name}";
 
             var client = new RestClient(url);
             client.Timeout = -1;
@@ -53,6 +53,35 @@ namespace marvelReset
             String resultado = response.Content.ToString();
 
             List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(response.Content);
+            return characters;
+        }
+
+        //CHARACTER MODEL TYPE METHODS
+        public static List<CharacterModel> GetCharactersM(int offset)
+        {
+            string url = "https://localhost:44385/api/characters/" + offset; //NO FUNCIONA
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+            String resultado = response.Content.ToString();
+
+            List<CharacterModel> characters = new List<CharacterModel>();
+            characters = JsonConvert.DeserializeObject<List<CharacterModel>>(response.Content);
+            return characters;
+        }
+        public static List<CharacterModel> SearchCharactersWithM(string name)
+        {
+            string url = $"https://localhost:44385/api/characters/nameStartsWith={name}";
+
+            var client = new RestClient(url);
+            client.Timeout = -1;
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+            String resultado = response.Content.ToString();
+
+            List<CharacterModel> characters = JsonConvert.DeserializeObject<List<CharacterModel>>(response.Content);
             return characters;
         }
     }

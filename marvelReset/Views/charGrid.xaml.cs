@@ -29,12 +29,5 @@ namespace marvelReset.Views
             listaPersonajes.ItemsSource = apiRequest.GetCharacters(0);
             //JsonCall(); //async call to getCharacters
         }
-
-        //public void JsonCall() //esto tiene que estar en un command/--binding-- parece mejor binding
-        //{
-           
-            
-        //    //mientras personajes %100==0, seguir pidiendo de 100 en 100
-        //}
     }
 }

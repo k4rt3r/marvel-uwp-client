@@ -15,8 +15,12 @@ namespace marvelReset.Model
             get { return _id; }
             set
             {
-                _id = value;
-                OnPropertyChanged();
+                if (value != Id)
+                {
+                    _id = value;
+                    OnPropertyChanged();
+                }
+
             }
         }
 
@@ -27,8 +31,12 @@ namespace marvelReset.Model
             get { return _name; }
             set
             {
-                _name = value;
-                OnPropertyChanged();
+                if (value != Name)
+                {
+                    _name = value;
+                    OnPropertyChanged();
+                }
+
             }
         }
         private string _image;
@@ -38,8 +46,12 @@ namespace marvelReset.Model
             get { return _image; }
             set
             {
-                _image = value;
-                OnPropertyChanged();
+                if (value != Image)
+                {
+                    _image = value;
+                    OnPropertyChanged();
+                }
+
             }
         }
         private string _description;
@@ -49,8 +61,12 @@ namespace marvelReset.Model
             get { return _description; }
             set
             {
-                _description = value;
-                OnPropertyChanged();
+                if (value != Description)
+                {
+                    _description = value;
+                    OnPropertyChanged();
+                }
+
             }
         }
     }

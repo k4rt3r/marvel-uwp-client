@@ -1,0 +1,87 @@
+﻿<Page
+    x:Class="marvelReset.Views.charGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:marvelReset.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:marvelReset.Model" 
+    mc:Ignorable="d"
+    Background="{StaticResource FondoBeige}">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel x:ConnectionId='2' x:Name="stackTop"
+                        Grid.Row="0"
+                        Orientation="Horizontal"
+                        Spacing="670">
+                <StackPanel x:ConnectionId='10' x:Name="stackSearch"
+                            Orientation="Horizontal"
+                            Margin="30,0,0,0">
+                    <TextBox x:ConnectionId='12'    x:Name="searchWith"
+                                Grid.Row="0"
+                                Margin="10,0" Width="250" Height="30"/>
+                    <Button x:ConnectionId='13' x:Name="buttonSearch"
+                            Content="SEARCH"
+                            Command="{Binding SearchWithCommand}"
+                            Style="{StaticResource BotonesIniciales}"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Margin="30,30"
+                            Grid.Row="0"/>
+                </StackPanel>
+                <Button x:ConnectionId='11' x:Name="buttonShowMore"
+                        Content="SHOW MORE"
+                        Command="{Binding MoreCommand}"
+                        Style="{StaticResource BotonesIniciales}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Margin="30,30"
+                        Grid.Row="0"/>
+            </StackPanel>
+
+            <ListView x:ConnectionId='3'   x:Name="listaPersonajes"
+                        ItemsSource="{Binding MenuList}"
+                        Margin="0,20"
+                        Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate                                  >
+                        <Grid x:Name="gridCharacters">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                            </Grid.RowDefinitions>
+                            
+                            <Image  x:Name="characterImage"
+                                    Source="/Assets/StoreLogo.png"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Grid.Column="0"/>
+                            <StackPanel x:Name="stack"
+                                        Grid.Column="1"
+                                        Orientation="Vertical">
+                                <TextBlock  x:Name="characterName"
+                                            Text="{Binding name}"
+                                            Foreground="{StaticResource PitchBlack}"/>
+                                <TextBlock  x:Name="characterDesc"
+                                            Text="{Binding description}"
+                                            Foreground="{StaticResource PitchBlack}"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
+

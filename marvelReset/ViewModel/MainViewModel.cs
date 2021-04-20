@@ -40,8 +40,9 @@ namespace marvelReset.ViewModel
             }
         }
 
-        /*****************************************************/ //SHOW ALL DATA
+        /*****************************************************/ //LOAD DATA
         private List<CharacterModel> _datos;
+
         private int lastIndex = 0;
 
         private ObservableCollection<CharacterModel> _characters;
@@ -51,36 +52,40 @@ namespace marvelReset.ViewModel
             get { return _characters; }
             set
             {
-                _characters = value;
-                OnPropertyChanged();
+                    _characters = value;
+                    OnPropertyChanged();
             }
         }
 
         public async void LoadData()//HANDLER == NULL
         {
-            var info = apiRequest.GetCharacters(0);
+            List<CharacterModel> info = apiRequest.GetCharactersM(0);
 
             _datos = info.Select(characterDto => new CharacterModel()
             {
-                Id = characterDto.id,
-                Description = characterDto.description,
-                Image = characterDto.thumbnail.path,
-                Name = characterDto.name
+                Id = characterDto.Id,
+                Description = characterDto.Description,
+                Image = characterDto.Image,
+                Name = characterDto.Name
             }).ToList();
 
-            Character = new ObservableCollection<CharacterModel>(_datos);
-            lastIndex = _datos.Count();
+            Character = new ObservableCollection<CharacterModel>(info);
+            lastIndex = info.Count();
         }
 
-        /*****************************************************/ //STARTS WITH
 
+        /*****************************************************/ //STARTS WITH
         private ICommand _searchWithCommand;
 
         public ICommand SearchWithCommand
         {
             get
             {
-                return _searchWithCommand ?? new CommandHandler(SearchWith);
+                if (_searchWithCommand == null)
+                {
+                    _searchWithCommand = new CommandHandler(SearchWith);
+                }
+                return _searchWithCommand;
             }
         }
 
@@ -94,49 +99,60 @@ namespace marvelReset.ViewModel
 
         private async void SearchWith()//SEARCH WITH
         {
-            List<Character> charactersShown;
+            List<CharacterModel> charactersShown;
             if (string.IsNullOrEmpty(Name))
-            {
-                charactersShown = apiRequest.GetCharacters(25, 0); //PORQUE PONEN 1 EN OFFSET¿?
+            {//reset/vacio
+                charactersShown = apiRequest.GetCharactersM(0);
             }
             else
-            {
-                charactersShown = apiRequest.SearchCharactersWith(Name, 25, 0);
+            {//campo lleno
+                charactersShown = apiRequest.SearchCharactersWithM(Name);
             }
+            _datos.AddRange(charactersShown.Select(characterDto => new CharacterModel()
+            {
+                Id = characterDto.Id,
+                Description = characterDto.Description,
+                Image = characterDto.Image,
+                Name = characterDto.Name
+            }).ToList());
 
+            Character = new ObservableCollection<CharacterModel>(_datos);
+            lastIndex = _datos.Count;
         }
 
 
         /*****************************************************/ //SHOW ALL CHARACTERS
-
         private ICommand _moreCommand;
 
         public ICommand MoreCommand
         {
             get
             {
-                return _moreCommand ?? new CommandHandler(ShowMoreData);
+                if (_moreCommand == null)
+                {
+                    _moreCommand = new CommandHandler(ShowMoreData);
+                }
+                return _moreCommand;
             }
         }
-
-        private async void ShowMoreData()//APLICAR PARÁMETROS DE LA API EN LA LLAMADA
+        private async void ShowMoreData()
         {
-            List<Character> infoShown;
+            List<CharacterModel> infoShown;
             if (string.IsNullOrEmpty(Name))
             {
-                infoShown = apiRequest.GetCharacters(100, lastIndex);
+                infoShown = apiRequest.GetCharactersM(lastIndex);
             }
             else
             {
-                infoShown = apiRequest.SearchCharactersWith(Name, 25, 1);
+                infoShown = apiRequest.SearchCharactersWithM(Name);
             }
 
             _datos.AddRange(infoShown.Select(characterDto => new CharacterModel()
             {
-                Id = characterDto.id,
-                Description = characterDto.description,
-                Image = characterDto.thumbnail.path,
-                Name = characterDto.name
+                Id = characterDto.Id,
+                Description = characterDto.Description,
+                Image = characterDto.Image,
+                Name = characterDto.Name
             }).ToList());
 
             Character = new ObservableCollection<CharacterModel>(_datos);

@@ -1,0 +1,20 @@
+﻿<Application
+    x:Class="marvelReset.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:marvelReset">
+    <Application.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="PitchBlack">#000</SolidColorBrush>
+            <SolidColorBrush x:Key="PasionaOrange">#f59542</SolidColorBrush>
+            <SolidColorBrush x:Key="FondoBeige">#fce5cd</SolidColorBrush>
+            <SolidColorBrush x:Key="GrisClaro">#999999</SolidColorBrush>
+            <SolidColorBrush x:Key="RojoError">#ff00</SolidColorBrush>
+            <SolidColorBrush x:Key="BlancoForeground">#ffff</SolidColorBrush>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Resources/ResourcesDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

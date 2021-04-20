@@ -12,13 +12,17 @@ namespace marvelReset.Common
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /* protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+         {
+             PropertyChangedEventHandler handler = this.PropertyChanged;
+             if (!handler.Equals(null))
+             {
+                 handler(this, new PropertyChangedEventArgs(propertyName));
+             }
+         }*/
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChangedEventHandler handler = this.PropertyChanged;
-            if (!handler.Equals(null))
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -129,6 +129,7 @@
     <Compile Include="Dtos\Event.cs" />
     <Compile Include="Dtos\Series.cs" />
     <Compile Include="Dtos\Story.cs" />
+    <Compile Include="Model\CharacterModel.cs" />
     <Compile Include="ViewModel\Base\MainViewModelBase.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -142,7 +143,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\BaseModel.cs" />
-    <Compile Include="Model\CharacterModel.cs" />
     <Compile Include="Model\MenuItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
