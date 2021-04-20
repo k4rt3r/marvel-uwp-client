@@ -71,7 +71,7 @@ namespace marvelReset.Dtos
     {
         //The unique ID of the character resource
         //---------------------------
-        public int id { get; set; }
+        public string id { get; set; }
 
         //The name of the character
         //---------------------------

@@ -120,7 +120,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Command\CommandHandler.cs" />
+    <Compile Include="Common\Command\CommandHandler.cs" />
     <Compile Include="Common\NotifyPropertyChanged.cs" />
     <Compile Include="Dtos\Character.cs" />
     <Compile Include="Dtos\Comic.cs" />

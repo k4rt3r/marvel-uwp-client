@@ -8,7 +8,7 @@
             <SolidColorBrush x:Key="PitchBlack">#000</SolidColorBrush>
             <SolidColorBrush x:Key="PasionaOrange">#f59542</SolidColorBrush>
             <SolidColorBrush x:Key="FondoBeige">#fce5cd</SolidColorBrush>
-            <SolidColorBrush x:Key="FondoRectangulo">#cccc</SolidColorBrush>
+            <SolidColorBrush x:Key="GrisClaro">#999999</SolidColorBrush>
             <SolidColorBrush x:Key="RojoError">#ff00</SolidColorBrush>
             <SolidColorBrush x:Key="BlancoForeground">#ffff</SolidColorBrush>
 

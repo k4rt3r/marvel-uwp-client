@@ -9,23 +9,51 @@
      Background="{StaticResource FondoBeige}">
 
     <Grid>
+        <Button x:Name="buttonShowMore"
+                Content="SHOW MORE"
+                Command="{Binding MoreCommand}"
+                Style="{StaticResource BotonesIniciales}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="30,30"/>
         <ListView x:Name="listaPersonajes"
-                  ItemsSource="{Binding MenuList}">
+                  ItemsSource="{Binding MenuList}"
+                  Margin="0,100,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:Character">
-                    <Grid>
+                    <Grid x:Name="gridCharacters">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"></ColumnDefinition>
-                            <ColumnDefinition Width="200"></ColumnDefinition>
-
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"></RowDefinition>
+                        </Grid.RowDefinitions>
+
                         <Image x:Name="characterImage"
-                               Source="{Binding thumbnail, Mode=TwoWay}"
-                               Grid.Column="0"/>
-                        <TextBlock  x:Name="characterName"
+                               Source="{Binding thumbnail}"
+                               HorizontalAlignment="Stretch"
+                               VerticalAlignment="Stretch"
+                               Grid.Column="0"
+                               />
+                               <!--Source="Assets/StoreLogo.png"-->
+                               
+
+                        <StackPanel x:Name="stack"
+                                    Grid.Column="1"
+                                    Orientation="Vertical">
+
+                            <TextBlock  x:Name="characterName"
                                     Text="{Binding name, Mode=TwoWay}"
                                     Foreground="{StaticResource PitchBlack}"
-                                    Grid.Column="1"/>
+                                    />
+                            <TextBlock  x:Name="characterDesc"
+                                    Text="{Binding description}"
+                                    Foreground="{StaticResource PitchBlack}"
+                                    />
+                        </StackPanel>
+
+                       
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -13,30 +13,16 @@
                    Style="{StaticResource txtBienvenida}"/>
         <NavigationView  x:Name="navView"
                          OpenPaneLength="240"
+                         IsPaneOpen="False"
                          Foreground="{StaticResource BlancoForeground}">
-            <!--SelectedItem="{Binding NavViewItem}"
-                         SelectionChanged="{Binding FrameNavegacion}"-->
+            <!--SelectedItem="{Binding NavViewItem}"-->
+                         
 
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Name="character" 
                                     Icon="People" 
                                     Content="Character"
-                                    Tag="Characters"
-                                    />
-                <NavigationViewItem x:Name="comic"
-                                    Content="Comic" 
-                                    Tag="Comics">
-                    <NavigationViewItem.Icon>
-                        <BitmapIcon UriSource="Assets/book.png"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
-                <NavigationViewItem x:Name="creator" 
-                                    Content="Creator"
-                                    Tag="Creator">
-                    <NavigationViewItem.Icon>
-                        <BitmapIcon UriSource="Assets/pencil.png"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
+                                    Tag="Characters"/>
             </NavigationView.MenuItems>
         </NavigationView>
     </Grid>
