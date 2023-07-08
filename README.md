@@ -1,4 +1,4 @@
-# marvelReset
-Quick Xamarin UWP project made for retrieving data from Marvel API using MVVM pattern
+# Introduction
+Xamarin UWP project to retrieve data from the official Marvel API REST using MVVM pattern
 
-Marvel API can be checked at: https://developer.marvel.com/
+Marvel API: https://developer.marvel.com/
